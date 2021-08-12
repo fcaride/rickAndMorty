@@ -4,10 +4,10 @@ import {
   getDefaultMiddleware,
 } from '@reduxjs/toolkit'
 import logger from 'redux-logger'
-import appReducer from 'slices/characters.slice'
+import charactersReducer from 'slices/characters.slice'
 
 const rootReducer = combineReducers({
-  app: appReducer,
+  characters: charactersReducer,
   // add more reducers
 })
 

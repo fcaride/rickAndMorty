@@ -6,9 +6,8 @@ import { createSlice } from '@reduxjs/toolkit'
 // ------------------------------------
 
 const initialState = {
-  checked: false,
-  loggedIn: false,
-  me: {},
+  characters: [],
+  isFetching: false,
 }
 
 // ------------------------------------
@@ -19,16 +18,12 @@ const charactersSlice = createSlice({
   name: 'characters',
   initialState,
   reducers: {
-    authenticate: (state, { payload }) => {
-      state.loggedIn = payload.loggedIn
-      state.checked = payload.checked
-    },
-    saveMe: (state, { payload }) => {
-      state.me = payload.me
+    getCharacters: (state, { payload }) => {
+      state.characters = payload
     },
   },
 })
 
-export const { authenticate, saveMe } = characters.actions
+export const { getCharacters } = charactersSlice.actions
 
-export default characters.reducer
+export default charactersSlice.reducer
