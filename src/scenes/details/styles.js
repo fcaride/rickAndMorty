@@ -36,7 +36,7 @@ export default StyleSheet.create({
   },
   locationName: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 19,
     marginBottom: 10,
   },
   dot: (color) => ({
