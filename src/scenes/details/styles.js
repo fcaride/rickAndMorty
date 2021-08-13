@@ -5,12 +5,12 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.darkGray,
-
     padding: 10,
   },
   image: {
     height: 200,
     resizeMode: 'contain',
+    marginTop: 20,
   },
   infoContainer: {
     marginTop: 10,
@@ -20,16 +20,18 @@ export default StyleSheet.create({
   name: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 25,
+    marginBottom: 5,
+    marginTop: 20,
   },
   status: {
     color: 'white',
-    fontSize: 16,
-    marginBottom: 10,
+    fontSize: 18,
+    marginBottom: 30,
   },
   location: {
     color: colors.lightGray,
-    fontSize: 16,
+    fontSize: 18,
     marginBottom: 5,
   },
   locationName: {
@@ -38,7 +40,7 @@ export default StyleSheet.create({
     marginBottom: 10,
   },
   dot: (color) => ({
-    marginTop: 6,
+    marginTop: 7,
     height: 7,
     width: 7,
     borderRadius: 3.5,
