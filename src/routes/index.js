@@ -1,3 +1,3 @@
-import Routes from './Routes'
+import Navigation from './Navigation'
 
-export default Routes
+export default Navigation

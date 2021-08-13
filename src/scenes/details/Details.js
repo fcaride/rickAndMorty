@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { Text, View, Image } from 'react-native'
+import {
+  ScrollView, Text, View, Image,
+} from 'react-native'
 import getStatusColor from '../../helpers/statusColor'
 import styles from './styles'
 
@@ -13,7 +15,7 @@ const Details = ({ route, navigation }) => {
 
   const color = getStatusColor(item.status)
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Image source={{ uri: item.image }} style={styles.image} />
       <View style={styles.infoContainer}>
         <Text style={styles.name}>{item.name}</Text>
@@ -30,7 +32,7 @@ const Details = ({ route, navigation }) => {
         <Text style={styles.location}>First seen in:</Text>
         <Text style={styles.locationName}>{item.origin.name}</Text>
       </View>
-    </View>
+    </ScrollView>
   )
 }
 

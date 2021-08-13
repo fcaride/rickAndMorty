@@ -10,7 +10,7 @@ const BackButton = () => {
       style={{ flexDirection: 'row', marginLeft: 15, alignItems: 'center' }}
     >
       <Image
-        source={require('../../../assets/backImage.png')}
+        source={require('../../../assets/images/backImage.png')}
         style={{ height: 15, width: 15 }}
       />
       <Text style={{ fontSize: 18, marginLeft: 5 }}>Back</Text>
