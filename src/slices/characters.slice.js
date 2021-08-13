@@ -7,7 +7,6 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   characters: [],
-  isFetching: false,
 }
 
 // ------------------------------------
