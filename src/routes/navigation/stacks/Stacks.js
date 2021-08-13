@@ -2,10 +2,8 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { colors } from 'theme'
 import Home from 'scenes/home'
-import Profile from 'scenes/profile'
 import Details from 'scenes/details'
-import HeaderLeft from './HeaderLeft'
-import HeaderTitle from './HeaderTitle'
+import BackButton from './BackButton'
 
 // ------------------------------------
 // Constants
@@ -15,8 +13,8 @@ const Stack = createStackNavigator()
 
 const navigationProps = {
   headerTintColor: 'white',
-  headerStyle: { backgroundColor: colors.darkPurple },
-  headerTitleStyle: { fontSize: 18 },
+  headerStyle: { backgroundColor: colors.lightWhite },
+  headerTitleStyle: { fontSize: 18, color: 'black' },
 }
 
 // ------------------------------------
@@ -32,41 +30,16 @@ export const HomeNavigator = () => (
     <Stack.Screen
       name="Home"
       component={Home}
-      options={({ navigation }) => ({
-        title: 'Home',
-      })}
-    />
-    <Stack.Screen
-      name="Details"
-      component={Details}
-      options={({ navigation }) => ({
-        title: 'Home',
-      })}
-    />
-  </Stack.Navigator>
-)
-
-export const ProfileNavigator = () => (
-  <Stack.Navigator
-    initialRouteName="Profile"
-    headerMode="screen"
-    screenOptions={navigationProps}
-  >
-    <Stack.Screen
-      name="Profile"
-      component={Profile}
-      options={({ navigation }) => ({
-        title: 'Profile',
-
-        headerLeft: () => <HeaderLeft navigation={navigation} />,
-        headerTitle: () => <HeaderTitle />,
-      })}
+      options={{
+        title: '',
+      }}
     />
     <Stack.Screen
       name="Details"
       component={Details}
       options={{
-        title: 'Details',
+        title: '',
+        headerLeft: BackButton,
       }}
     />
   </Stack.Navigator>

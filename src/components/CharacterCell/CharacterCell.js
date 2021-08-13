@@ -1,19 +1,22 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import { Text, View, Image } from 'react-native'
+import {
+  TouchableOpacity, View, Text, Image,
+} from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import getStatusColor from '../../helpers/statusColor'
 import styles from './styles'
 
-const Details = ({ route, navigation }) => {
-  const item = route.params
-
-  useEffect(() => {
-    navigation.setOptions({ title: item.name })
-  }, [])
+const CharacterCell = ({ item }) => {
+  const navigation = useNavigation()
 
   const color = getStatusColor(item.status)
+
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => navigation.navigate('Details', item)}
+    >
       <Image source={{ uri: item.image }} style={styles.image} />
       <View style={styles.infoContainer}>
         <Text style={styles.name}>{item.name}</Text>
@@ -30,13 +33,11 @@ const Details = ({ route, navigation }) => {
         <Text style={styles.location}>First seen in:</Text>
         <Text style={styles.locationName}>{item.origin.name}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 
-Details.propTypes = {
-  route: PropTypes.object.isRequired,
-  navigation: PropTypes.object.isRequired,
+CharacterCell.propTypes = {
+  item: PropTypes.object.isRequired,
 }
-
-export default Details
+export default CharacterCell

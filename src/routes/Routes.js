@@ -1,8 +1,6 @@
 import React from 'react'
 import Main from './navigation'
 
-const Routes = () => {
-  return <Main />
-}
+const Routes = () => <Main />
 
 export default Routes

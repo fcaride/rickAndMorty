@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { View } from 'react-native'
 import { Provider } from 'react-redux'
-import store from 'utils/store'
+import { PersistGate } from 'redux-persist/integration/react'
+import { store, persistor } from 'utils/store'
 import 'utils/ignore'
 
 // assets
@@ -29,7 +30,9 @@ const App = () => {
   if (!didLoad) return <View />
   return (
     <Provider store={store}>
-      <Router />
+      <PersistGate loading={null} persistor={persistor}>
+        <Router />
+      </PersistGate>
     </Provider>
   )
 }
