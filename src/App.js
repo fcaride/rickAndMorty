@@ -9,7 +9,7 @@ import 'utils/ignore'
 import { imageAssets } from 'theme/images'
 import { fontAssets } from 'theme/fonts'
 import Router from './routes'
-
+//hola
 const App = () => {
   // state
   const [didLoad, setDidLoad] = useState(false)
